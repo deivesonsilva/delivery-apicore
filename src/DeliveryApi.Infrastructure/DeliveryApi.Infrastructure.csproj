@@ -1,0 +1,15 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="DeliveryApi.Application\obj\DeliveryApi.Application.csproj.nuget.dgspec.json" />
+    <None Remove="DeliveryApi.Application\obj\Debug\netcoreapp3.1\DeliveryApi.Application.assets.cache" />
+    <None Remove="DeliveryApi.Application\obj\Debug\netcoreapp3.1\DeliveryApi.Application.csproj.FileListAbsolute.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="entities\" />
+  </ItemGroup>
+</Project>
