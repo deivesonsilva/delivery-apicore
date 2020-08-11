@@ -15,6 +15,12 @@ namespace DeliveryApi.Infrastructure.Mappings
             builder.Property(x => x.Code).HasMaxLength(20).HasColumnType("varchar(20)").IsRequired();
             builder.Property(x => x.IsUsed).HasDefaultValue(false);
             builder.Property(x => x.Value);
-      }
+
+            builder.HasOne(a => a.Shop)
+                .WithMany(b => b.Coupons)
+                .HasForeignKey(c => c.ShopId);
+
+            builder.HasIndex(a => a.ShopId).IsUnique(false);
+        }
    }
 }

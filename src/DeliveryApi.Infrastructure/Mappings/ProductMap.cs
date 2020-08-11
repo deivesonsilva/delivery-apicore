@@ -18,6 +18,17 @@ namespace DeliveryApi.Infrastructure.Mappings
             builder.Property(x => x.IsActive).HasDefaultValue("true");
             builder.Property(x => x.CreatedAt);
             builder.Property(x => x.ImageUrl);
-      }
+
+            builder.HasOne(a => a.Shop)
+                .WithMany(b => b.Products)
+                .HasForeignKey(c => c.ShopId);
+
+            builder.HasOne(a => a.Category)
+                .WithMany(b => b.Products)
+                .HasForeignKey(c => c.CategoryId);
+
+            builder.HasIndex(a => a.ShopId).IsUnique(false);
+            builder.HasIndex(a => a.CategoryId).IsUnique(false);
+        }
    }
 }

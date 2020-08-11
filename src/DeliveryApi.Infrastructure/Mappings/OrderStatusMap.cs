@@ -10,7 +10,7 @@ namespace DeliveryApi.Infrastructure.Mappings
       {
             builder.ToTable("OrderStatus");
             builder.HasKey(x => x.Id);
-            builder.Property(x => x.Name);
+            builder.Property(x => x.Name).HasMaxLength(120).HasColumnType("varchar(120)");
             builder.Property(x => x.Disabled);
       }
    }

@@ -19,6 +19,12 @@ namespace DeliveryApi.Infrastructure.Mappings
             builder.Property(x => x.ZipCode).HasMaxLength(8).HasColumnType("varchar(8)");
             builder.Property(x => x.Default).HasDefaultValue(false);
             builder.Property(x => x.Disabled);
-      }
+
+            builder.HasOne(a => a.Customer)
+                .WithMany(b => b.Addresses)
+                .HasForeignKey(c => c.CustomerId);
+
+            builder.HasIndex(a => a.CustomerId).IsUnique(false);
+        }
    }
 }

@@ -14,8 +14,19 @@ namespace DeliveryApi.Infrastructure.Mappings
             builder.Property(x => x.Price);
             builder.Property(x => x.Amount);
             builder.Property(x => x.Note);
-            builder.Property(x => x.OptionalInline).HasMaxLength(200).HasColumnType("varchar(200)");
+            builder.Property(x => x.OptionalInline).HasMaxLength(400).HasColumnType("varchar(400)");
             builder.Property(x => x.AmountOptional);
-      }
+
+            builder.HasOne(a => a.Order)
+                .WithMany(b => b.OrderProductItens)
+                .HasForeignKey(c => c.OrderId);
+
+            builder.HasOne(a => a.Product)
+                .WithMany(b => b.OrderProductItens)
+                .HasForeignKey(c => c.ProductId);
+
+            builder.HasIndex(a => a.OrderId).IsUnique(false);
+            builder.HasIndex(a => a.ProductId).IsUnique(false);
+        }
    }
 }

@@ -23,6 +23,8 @@ namespace DeliveryApi.Infrastructure.Mappings
             builder.Property(x => x.LastSignin);
             builder.Property(x => x.IsActive).HasDefaultValue(true);
             builder.Property(x => x.Document).HasMaxLength(20).HasColumnType("varchar(20)");
-      }
+
+            builder.HasIndex(a => a.AccountMasterId).IsUnique(false);
+        }
    }
 }

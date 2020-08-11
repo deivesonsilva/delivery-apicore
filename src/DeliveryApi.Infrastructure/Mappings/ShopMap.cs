@@ -28,6 +28,17 @@ namespace DeliveryApi.Infrastructure.Mappings
             builder.Property(x => x.City).HasMaxLength(200).HasColumnType("varchar(200)").IsRequired();
             builder.Property(x => x.State).HasMaxLength(2).HasColumnType("varchar(2)").IsRequired();
             builder.Property(x => x.ZipCode).HasMaxLength(8).HasColumnType("varchar(8)");
+
+            builder.HasOne(a => a.Category)
+                .WithMany(b => b.Shops)
+                .HasForeignKey(c => c.CategoryId);
+
+            builder.HasOne(a => a.Manager)
+                .WithMany(b => b.Shops)
+                .HasForeignKey(c => c.ManagerId);
+
+            builder.HasIndex(a => a.CategoryId).IsUnique(false);
+            builder.HasIndex(a => a.ManagerId).IsUnique(false);
         }
    }
 }

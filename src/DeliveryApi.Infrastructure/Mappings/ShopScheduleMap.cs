@@ -14,6 +14,10 @@ namespace DeliveryApi.Infrastructure.Mappings
             builder.Property(x => x.OpenAt);
             builder.Property(x => x.CloseAt);
             builder.Property(x => x.IsActive).HasDefaultValue(true);
-      }
+
+            builder.HasOne(a => a.Shop)
+                .WithMany(b => b.Schedules)
+                .HasForeignKey(c => c.ShopId);
+        }
    }
 }

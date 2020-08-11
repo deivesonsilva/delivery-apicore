@@ -14,6 +14,12 @@ namespace DeliveryApi.Infrastructure.Mappings
             builder.Property(x => x.Price);
             builder.Property(x => x.Disabled);
             builder.Property(x => x.IsActive);
-      }
+
+            builder.HasOne(a => a.Product)
+                .WithMany(b => b.Optionals)
+                .HasForeignKey(c => c.ProductId);
+
+            builder.HasIndex(a => a.ProductId).IsUnique(false);
+        }
    }
 }
