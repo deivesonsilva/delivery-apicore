@@ -1,5 +1,5 @@
 ﻿using System;
-namespace DeliveryApi.Infrastructure.entities
+namespace DeliveryApi.Infrastructure.Entities
 {
     public class OrderItemOptional : Entity
     {

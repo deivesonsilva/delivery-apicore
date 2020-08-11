@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 
-namespace DeliveryApi.Infrastructure.entities
+namespace DeliveryApi.Infrastructure.Entities
 {
     public class ProductOptional : Entity
     {

@@ -2,9 +2,9 @@
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
-namespace DeliveryApi.Infrastructure.entities
+namespace DeliveryApi.Infrastructure.Entities
 {
-    public class Entity
+    public abstract class Entity
     {
         [Key]
         [DatabaseGenerated(DatabaseGeneratedOption.None)]
