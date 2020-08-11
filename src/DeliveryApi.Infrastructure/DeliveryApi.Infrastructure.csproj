@@ -1,15 +1,24 @@
 <Project Sdk="Microsoft.NET.Sdk">
-
   <PropertyGroup>
     <TargetFramework>netcoreapp3.1</TargetFramework>
   </PropertyGroup>
-
   <ItemGroup>
     <None Remove="DeliveryApi.Application\obj\DeliveryApi.Application.csproj.nuget.dgspec.json" />
     <None Remove="DeliveryApi.Application\obj\Debug\netcoreapp3.1\DeliveryApi.Application.assets.cache" />
     <None Remove="DeliveryApi.Application\obj\Debug\netcoreapp3.1\DeliveryApi.Application.csproj.FileListAbsolute.txt" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="entities\" />
+    <Folder Include="Entities\" />
+    <Folder Include="Mappings\" />
+  </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="Microsoft.EntityFrameworkCore" Version="3.1.5" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Relational" Version="3.1.5" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="3.1.5">
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+      <PrivateAssets>all</PrivateAssets>
+    </PackageReference>
+    <PackageReference Include="Microsoft.AspNetCore.Http.Abstractions" Version="2.2.0" />
+    <PackageReference Include="Pomelo.EntityFrameworkCore.MySql" Version="3.1.1" />
   </ItemGroup>
 </Project>
