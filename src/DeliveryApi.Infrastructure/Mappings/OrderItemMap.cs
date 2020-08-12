@@ -13,8 +13,8 @@ namespace DeliveryApi.Infrastructure.Mappings
             builder.Property(x => x.Quantity);
             builder.Property(x => x.Price);
             builder.Property(x => x.Amount);
-            builder.Property(x => x.Note);
-            builder.Property(x => x.OptionalInline).HasMaxLength(400).HasColumnType("varchar(400)");
+            builder.Property(x => x.Note).HasMaxLength(200).HasColumnType("varchar(200)"); ;
+            builder.Property(x => x.OptionalInline);
             builder.Property(x => x.AmountOptional);
 
             builder.HasOne(a => a.Order)

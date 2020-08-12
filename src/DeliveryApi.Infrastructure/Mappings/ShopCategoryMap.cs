@@ -12,7 +12,7 @@ namespace DeliveryApi.Infrastructure.Mappings
             builder.HasKey(x => x.Id);
             builder.Property(x => x.Name).HasMaxLength(120).HasColumnType("varchar(120)").IsRequired();
             builder.Property(x => x.IsActive).HasDefaultValue(true);
-            builder.Property(x => x.ImageUrl).HasMaxLength(200).HasColumnType("varchar(200)");
+            builder.Property(x => x.ImageUrl);
       }
    }
 }

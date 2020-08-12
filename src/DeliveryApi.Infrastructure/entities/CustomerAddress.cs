@@ -10,7 +10,7 @@ namespace DeliveryApi.Infrastructure.Entities
         public string City { get; set; }
         public string State { get; set; }
         public string ZipCode { get; set; }             
-        public bool Default { get; set; }               
+        public bool IsDefault { get; set; }               
         public DateTime? Disabled { get; set; }
 
         public Account Customer { get; set; }           
