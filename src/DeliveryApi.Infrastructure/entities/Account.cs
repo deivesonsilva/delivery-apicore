@@ -18,7 +18,7 @@ namespace DeliveryApi.Infrastructure.Entities
         public DateTime? LastSignin { get; set; }
 
         public bool IsActive { get; set; }
-        public string Document { get; set; }
+        public string DocumentNumber { get; set; }
 
         public ICollection<CustomerAddress> Addresses { get; set; }
         public ICollection<Shop> Shops { get; set; }

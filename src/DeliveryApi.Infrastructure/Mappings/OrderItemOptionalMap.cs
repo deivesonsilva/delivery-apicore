@@ -10,7 +10,7 @@ namespace DeliveryApi.Infrastructure.Mappings
       {
             builder.ToTable("OrderItemOptional");
             builder.HasKey(x => x.Id);
-            builder.Property(x => x.Price);
+            builder.Property(x => x.Price).HasColumnType("decimal(18,2)");
 
             builder.HasOne(a => a.ProductOptional)
                 .WithMany(b => b.OrderItemProductOptionals)

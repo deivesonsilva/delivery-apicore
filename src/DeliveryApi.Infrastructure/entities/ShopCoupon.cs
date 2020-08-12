@@ -7,7 +7,7 @@ namespace DeliveryApi.Infrastructure.Entities
         public DateTime ExpirationDate { get; set; }    //Data de vencimento
         public string Code { get; set; }                //Codigo
         public bool IsUsed { get; set; }                //Foi utilizado
-        public int Value { get; set; }                  //Valor do cupom
+        public int ValuePercentual { get; set; }        //Valor do cupom
 
         public Shop Shop { get; set; }
         public Guid ShopId { get; set; }

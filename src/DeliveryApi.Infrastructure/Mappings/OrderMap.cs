@@ -10,11 +10,11 @@ namespace DeliveryApi.Infrastructure.Mappings
       {
             builder.ToTable("Order");
             builder.HasKey(x => x.Id);
-            builder.Property(x => x.ValueOrder);
-            builder.Property(x => x.ValueCashback);
-            builder.Property(x => x.ValueCupom);
-            builder.Property(x => x.ValueDelivery);
-            builder.Property(x => x.Amount);
+            builder.Property(x => x.ValueOrder).HasColumnType("decimal(18,2)");
+            builder.Property(x => x.ValueCashback).HasColumnType("decimal(18,2)");
+            builder.Property(x => x.ValueCupom).HasColumnType("decimal(18,2)");
+            builder.Property(x => x.ValueDelivery).HasColumnType("decimal(18,2)");
+            builder.Property(x => x.Amount).HasColumnType("decimal(18,2)");
             builder.Property(x => x.Rating);
             builder.Property(x => x.IsDelivery).HasDefaultValue(false);
             builder.Property(x => x.OrderNumber);

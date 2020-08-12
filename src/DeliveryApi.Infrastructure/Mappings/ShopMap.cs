@@ -12,13 +12,13 @@ namespace DeliveryApi.Infrastructure.Mappings
             builder.HasKey(x => x.Id);
 
             builder.Property(x => x.Name).HasMaxLength(120).HasColumnType("varchar(120)").IsRequired();
-            builder.Property(x => x.Description).HasMaxLength(400).HasColumnType("varchar(400)");
+            builder.Property(x => x.Description);
             builder.Property(x => x.RatingAvg);
             builder.Property(x => x.WaitTime);
             builder.Property(x => x.Disabled);
             builder.Property(x => x.IsActive).HasDefaultValue(true);
             builder.Property(x => x.IsDelivery).HasDefaultValue(false);
-            builder.Property(x => x.ValueDelivery);
+            builder.Property(x => x.ValueDelivery).HasColumnType("decimal(18,2)");
             builder.Property(x => x.IsWithdrawShop).HasDefaultValue(false);
             builder.Property(x => x.PhoneNumber).HasMaxLength(20).HasColumnType("varchar(20)");
 
