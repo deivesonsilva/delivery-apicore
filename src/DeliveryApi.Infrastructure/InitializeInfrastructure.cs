@@ -36,22 +36,15 @@ namespace DeliveryApi.Infrastructure
 
       public static void ConfigureUpdateDatebase(this IApplicationBuilder app)
       {
-         try
-         {
             using (var serviceScope = app.ApplicationServices
-                .GetRequiredService<IServiceScopeFactory>()
-                .CreateScope())
+                   .GetRequiredService<IServiceScopeFactory>()
+                   .CreateScope())
+            {
+                using (var context = serviceScope.ServiceProvider.GetService<RepositoryContext>())
                 {
-                    using (var context = serviceScope.ServiceProvider.GetService<RepositoryContext>())
-                    {
-                        context.Database.EnsureCreated();
-                    }
+                    context.Database.EnsureCreated();
                 }
             }
-            catch
-            {
-                Console.WriteLine("Erro to Connect database server.");
-            }
-      }
+        }
    }
 }
