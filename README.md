@@ -16,8 +16,9 @@ Funcionalidades:
 * .Net Core 3.1
 * Entity Framework Core - MariaDB
 
-### Versões
+#### Versões
 
 Nessa versão será desenvolvido somente a camada de infraestrutura.
-* Modelagem do banco de dados utilizando Entity Framework Core
-* Preparação de toda a camada de acesso a dados
+
+* Modelagem do banco de dados utilizando Entity Framework Core. [Ver diagrama](/docs/diagram.png)
+* Preparando toda a camada de acesso a dados
